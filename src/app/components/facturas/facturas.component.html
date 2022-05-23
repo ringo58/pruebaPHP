@@ -23,7 +23,7 @@
                 <mat-label>Item</mat-label>
                 <mat-select formControlName="item">
                   <mat-option *ngFor="let state of selectclasificador2" [value]="state['valor']">
-                    {{state['nombre']}}
+                    {{state['nombre'] + ' - $' +state['valor']}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
