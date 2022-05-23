@@ -1,0 +1,16 @@
+
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+      <mat-icon >menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/clientes">Clientes</button>
+      <button mat-menu-item routerLink="/productos">Productos</button>
+      <button mat-menu-item routerLink="/facturas">Facturas</button>
+      <button mat-menu-item routerLink="/excepciones">Excepciones</button>
+    </mat-menu>
+    <span>Ejercicio Facturación</span>
+  </mat-toolbar>
+</p>
+

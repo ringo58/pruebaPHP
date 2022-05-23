@@ -1,0 +1,22 @@
+.cliente-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.cliente-form-full-width {
+  width: 100%;
+}
+.container{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.content{
+  text-align: center;
+  border:5px;
+  border-radius: 5px;
+  border-color: black;
+}
+

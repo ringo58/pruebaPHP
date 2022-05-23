@@ -1,0 +1,53 @@
+<mat-tab-group>
+  <mat-tab label="Crear factura">
+    <div class="container">
+      <mat-card class="content">
+        <mat-card-title>
+          Crear cliente
+        </mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="facturaFormControl" class="cliente-form" (ngSubmit)="Validar()">
+            <mat-form-field  class="cliente-form-full-width" appearance="fill">
+              <mat-label>Cliente</mat-label>
+              <mat-select formControlName="cliente">
+                <mat-option *ngFor="let state of selectclasificador1" [value]="state['id']">
+                  {{state['nombre'] + ' ' + state['apellido']}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <table formArrayName="items">
+            <button at-raised-button color="primary" type="button" (click)="addItem()">Agregar Item</button>
+            <tr *ngFor="let item of items().controls;let i = index" [formGroupName]="i">
+              <td><mat-form-field class="cliente-form-full-width" appearance="fill">
+                <mat-label>Item</mat-label>
+                <mat-select formControlName="item">
+                  <mat-option *ngFor="let state of selectclasificador2" [value]="state['valor']">
+                    {{state['nombre']}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              </td>
+              <td><mat-form-field class="cliente-form-full-width" appearance="fill">
+                <mat-label>cantidad</mat-label>
+                <input type="number" matInput placeholder="Ejm. Molina"  formControlName="cantidad">
+              </mat-form-field>
+              </td>
+            </tr>
+            </table>
+            <mat-form-field class="cliente-form-full-width" appearance="fill">
+              <mat-label>Numero de factura</mat-label>
+              <input type="number" matInput placeholder="Ejm. Molina" formControlName="id">
+            </mat-form-field>
+            <mat-form-field class="cliente-form-full-width" appearance="fill">
+              <mat-label>Empresa</mat-label>
+              <input type="text" matInput formControlName="empresa">
+            </mat-form-field>
+            <button mat-raised-button color="primary">Guardar</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Ver factura"> Content 2 </mat-tab>
+</mat-tab-group>
